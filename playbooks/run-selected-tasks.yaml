@@ -1,0 +1,22 @@
+- hosts: localhost
+  vars:
+    test_name: "{{ zuul_return['test_name'] }}"
+  tasks:
+    - name: Run tasks for 'test1'
+      block:
+        - debug:
+            msg: "Running tasks for test1"
+      when: test_name == 'test1'
+
+    - name: Run tasks for 'test2'
+      block:
+        - debug:
+            msg: "Running tasks for test2"
+      when: test_name == 'test2'
+
+    - name: Handle unknown test name
+      block:
+        - debug:
+            msg: "No tasks defined for test '{{ test_name }}'"
+      when: test_name not in ['test1', 'test2']
+
