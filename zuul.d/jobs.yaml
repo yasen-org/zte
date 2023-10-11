@@ -1,0 +1,10 @@
+- job:
+    name: trigger-jobs
+    run: playbooks/trigger-jobs.yaml
+
+- job:
+    name: run-selected-tasks
+    run: playbooks/run-selected-tasks.yaml
+    dependencies:
+      - trigger-jobs
+

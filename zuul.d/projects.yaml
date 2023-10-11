@@ -9,7 +9,5 @@
     name: zte
     check:
       jobs:
-        - noop
-    gate:
-      jobs:
-        - noop
+        - trigger-jobs
+        - run-selected-tasks

@@ -1,0 +1,21 @@
+- hosts: localhost
+  vars:
+    pr_message: "{{ zuul.comment.body }}"
+    pattern: "IPF TEST: (.+)"
+  tasks:
+    - name: Extract test name from PR comment
+      set_fact:
+        test_name: "{{ pr_message | regex_search(pattern, '\\1') }}"
+      when: pr_message is regex(pattern)
+
+    - name: Display extracted test name
+      debug:
+        msg: "Test name extracted: {{ test_name }}"
+      when: test_name is defined
+
+    - name: Return test name for subsequent jobs
+      zuul_return:
+        data:
+          test_name: "{{ test_name }}"
+      when: test_name is defined
+
