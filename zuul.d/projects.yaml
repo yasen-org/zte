@@ -11,3 +11,10 @@
       jobs:
         - trigger-jobs
         - run-selected-tasks
+
+- project:
+    name: zue
+    check:
+      jobs:
+        - trigger-jobs
+        - run-selected-tasks
