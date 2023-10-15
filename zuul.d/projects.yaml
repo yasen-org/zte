@@ -6,14 +6,7 @@
       jobs: []
 
 - project:
-    name: zte
-    check:
-      jobs:
-        - trigger-jobs
-        - run-selected-tasks
-
-- project:
-    name: zue
+    name: yasen-org/zte
     check:
       jobs:
         - trigger-jobs
