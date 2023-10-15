@@ -3,6 +3,10 @@
     run: playbooks/trigger-jobs.yaml
 
 - job:
+    name: my-debug-job
+    run: playbooks/debug-message.yaml
+
+- job:
     name: run-selected-tasks
     run: playbooks/run-selected-tasks.yaml
     dependencies:

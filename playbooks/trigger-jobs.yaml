@@ -1,4 +1,4 @@
-- hosts: localhost
+- hosts: all
   vars:
     pr_message: "{{ zuul.comment.body }}"
     pattern: "IPF TEST: (.+)"
