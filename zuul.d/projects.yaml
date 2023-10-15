@@ -6,7 +6,7 @@
       jobs: []
 
 - project:
-    name: zte
+    name: yasen-org/zte
     check:
       jobs:
         - trigger-jobs
