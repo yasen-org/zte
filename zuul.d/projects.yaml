@@ -9,5 +9,6 @@
     name: yasen-org/zte
     check:
       jobs:
+        - my-debug-job
         - trigger-jobs
         - run-selected-tasks
