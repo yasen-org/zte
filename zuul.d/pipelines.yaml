@@ -24,7 +24,9 @@
     start:
       github:
         check: 'in_progress'
-        comment: false
+        comment: true
+        review: comment
+        review-body: check starts blabla
         # It is recommended to use the checks API for consistency with
         # other common CI tools that integrate with Github.  Results
         # will appear on the "checks" tab of PR and changes.  There is
